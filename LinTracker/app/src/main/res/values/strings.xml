@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">LinTracker for Driver</string>
+    <string name="access_token">pk.eyJ1IjoiYmF5dWhpYmF0dWxsYWgiLCJhIjoiY2syMDBpNzlyMGs2NzNqcGN5eHluMDZhMSJ9.ILZXso7L-74DSf8YGkCYjg</string>
+    <!-- Recyclerview on map -->
+    <string name="rv_card_name">Halte #%1$d</string>
+    <string name="rv_card_bed_info">This location has %1$d beds</string>
+    <string name="toast_instruction">Tap on cards below</string>
+
+    <!--QueryFeatureActivity activity-->
+    <string name="query_feature_marker_title">Properties:</string>
+    <string name="click_on_map_instruction">click_on_map_instruction</string>
+    <string name="query_feature_no_properties_found">query_feature_no_properties_found</string>
+
+    <!--Lokasi Device-->
+    <string name="user_location_permission_explanation">Anda harus mengaktifkan lokasi untuk melihat lokasi anda</string>
+    <string name="user_location_permission_not_granted">Aktivasi lokasi tidak disetujui</string>
+    <string name="tracking_enabled">Mode tracking : aktif</string>
+    <string name="tracking_already_enabled">Mode tracking sudah aktif</string>
+    <string name="current_location">Lat: %1$f Long: %2$f</string>
+
+    <!-- Location change listening -->
+    <string name="new_location">New lat: %1$s New longitude: %2$s</string>
+</resources>

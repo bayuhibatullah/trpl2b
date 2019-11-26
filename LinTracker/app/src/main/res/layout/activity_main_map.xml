@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMapAct">
+
+    <Button
+        android:id="@+id/kursi"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/kursi_kosong"
+        android:fontFamily="@font/mmedium"
+        android:text="KURSI : KOSONG"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:mapbox_cameraTargetLat="-8.169432"
+        app:mapbox_cameraTargetLng="113.701841"
+        app:mapbox_cameraZoom="13">
+
+    </com.mapbox.mapboxsdk.maps.MapView>
+
+<!--    <Button-->
+<!--        android:id="@+id/list"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginBottom="100dp"-->
+<!--        android:background="@drawable/bttn_secondary"-->
+<!--        android:drawableLeft="@drawable/ic_menu"-->
+<!--        android:fontFamily="@font/mregular"-->
+<!--        android:padding="8dp"-->
+<!--        android:text="Daftar Penunggu"-->
+<!--        android:textColor="@color/blackPrimary"-->
+<!--        android:textSize="13sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/kursi"-->
+<!--        tools:layout_editor_absoluteX="76dp" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/kursi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/off"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/circle_solid_red"
+            android:drawableLeft="@drawable/ic_power"
+            android:paddingLeft="18dp"/>
+
+        <Button
+            android:id="@+id/list"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/circle_solid_white"
+            android:drawableLeft="@drawable/ic_menu"
+            android:paddingLeft="18dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/profilBorder"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/circle_border_grey"
+                android:gravity="center"
+                android:orientation="vertical">
+            </View>
+
+            <com.github.florent37.shapeofview.shapes.CircleView
+                android:id="@+id/profil_shape"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toBottomOf="@+id/profilBorder"
+                app:layout_constraintEnd_toEndOf="@+id/profilBorder"
+                app:layout_constraintStart_toStartOf="@+id/profilBorder"
+                app:layout_constraintTop_toTopOf="@+id/profilBorder">
+
+                <ImageView
+                    android:id="@+id/profil"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/icon_nopic" />
+
+            </com.github.florent37.shapeofview.shapes.CircleView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/tengah"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/circle_solid_white"
+            android:drawableLeft="@drawable/ic_gps"
+            android:paddingLeft="18dp"
+            android:layout_marginLeft="24dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:fontFamily="@font/mmedium"
+                android:textColor="@color/blackPrimary"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center_horizontal"
+                android:text="Daftar Tunggu Tiap Halte"/>
+
+            <TextView
+                android:id="@+id/xkodim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/mlight"
+                android:textColor="@color/blackPrimary"
+                android:text="Halte Kodim : "/>
+
+            <TextView
+                android:id="@+id/xayani"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/mlight"
+                android:textColor="@color/blackPrimary"
+                android:text="Halte Kodim : "/>
+
+            <TextView
+                android:id="@+id/xalun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/mlight"
+                android:textColor="@color/blackPrimary"
+                android:text="Halte Kodim : "/>
+
+            <TextView
+                android:id="@+id/xsmp2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/mlight"
+                android:textColor="@color/blackPrimary"
+                android:text="Halte Kodim : "/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
