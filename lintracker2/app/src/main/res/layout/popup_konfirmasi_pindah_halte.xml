@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card_white"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/textpindah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Anda telah memilih halte ahmad yani. Apakah anda yakin ingin
+pindah halte?"
+            android:fontFamily="@font/mregular"
+            android:textColor="@color/blackPrimary"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/tidakPindah"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bttn_secondary"
+                android:text="Tidak"
+                android:fontFamily="@font/mmedium"
+                android:textColor="@color/greyPrimary"
+                android:textSize="16sp"
+                android:layout_marginRight="16dp"/>
+
+            <Button
+                android:id="@+id/yaPindah"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bttn_primary"
+                android:text="Ya"
+                android:fontFamily="@font/mmedium"
+                android:textColor="#FFF"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

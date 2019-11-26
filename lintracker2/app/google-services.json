@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1039679140503",
+    "firebase_url": "https://lintracker-48f9e.firebaseio.com",
+    "project_id": "lintracker-48f9e",
+    "storage_bucket": "lintracker-48f9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039679140503:android:ca56bceec9fd4992f6afd2",
+        "android_client_info": {
+          "package_name": "com.unej.lintracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039679140503-42c82ef8ap5jhs9aggabcq0kja6il2tm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4sJoPKHFsLF_clTOsIVtVFTxOR1y13vk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039679140503-42c82ef8ap5jhs9aggabcq0kja6il2tm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039679140503:android:fe7470125aa2ef31f6afd2",
+        "android_client_info": {
+          "package_name": "com.unej.lintracker2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039679140503-42c82ef8ap5jhs9aggabcq0kja6il2tm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4sJoPKHFsLF_clTOsIVtVFTxOR1y13vk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039679140503-42c82ef8ap5jhs9aggabcq0kja6il2tm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
