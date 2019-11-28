@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.PointF;
 import android.graphics.drawable.ColorDrawable;
+import android.opengl.Visibility;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -40,6 +41,7 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.style.expressions.Expression;
+import com.mapbox.mapboxsdk.style.layers.Layer;
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
 import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
 
@@ -52,12 +54,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import static com.mapbox.mapboxsdk.style.layers.Property.ICON_ANCHOR_BOTTOM;
+import static com.mapbox.mapboxsdk.style.layers.Property.NONE;
+import static com.mapbox.mapboxsdk.style.layers.Property.VISIBLE;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconAllowOverlap;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconAnchor;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconIgnorePlacement;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconImage;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconOffset;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconSize;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.visibility;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -126,6 +131,7 @@ public class MainMap2Act extends AppCompatActivity implements OnMapReadyCallback
             public void onStyleLoaded(@NonNull Style style) {
                 setUpData();
                 setUpDriverLayer(style);
+                linVisibility(style);
                 enableLocationComponent(style);
                 driverGeoJsonUpdate();
                 mapboxMap.addOnMapClickListener(MainMap2Act.this);
@@ -146,7 +152,8 @@ public class MainMap2Act extends AppCompatActivity implements OnMapReadyCallback
                 iconAllowOverlap(true),
                 iconIgnorePlacement(true),
                 iconOffset(new Float[] {0f, -8f}),
-                iconSize(.2f)
+                iconSize(.2f),
+                visibility(NONE)
         ));
     }
 
@@ -160,7 +167,6 @@ public class MainMap2Act extends AppCompatActivity implements OnMapReadyCallback
                 setUpClickLocationIconImage(style);
                 setUpClickLocationMarkerLayer(style);
                 setUpInfoWindowLayer(style);
-
             });
         }
     }
@@ -616,6 +622,26 @@ public class MainMap2Act extends AppCompatActivity implements OnMapReadyCallback
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+            }
+        });
+    }
+
+    private void linVisibility(Style style){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("status");
+        Layer layer = style.getLayer(DRIVER_LAYER_ID);
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue().toString().equalsIgnoreCase("aktif")){
+                    layer.setProperties(visibility(VISIBLE));
+                }else{
+                    layer.setProperties(visibility(NONE));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
     }

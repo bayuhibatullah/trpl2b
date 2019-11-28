@@ -47,7 +47,6 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
-import com.squareup.picasso.Picasso;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
@@ -61,12 +60,10 @@ public class MainMapAct extends AppCompatActivity implements
     private PermissionsManager permissionsManager;
     private MapboxMap mapboxMap;
     private MapView mapView;
-    private Button tengah;
+    private Button tengah, kursi, list;
     private LocationComponent locationComponent;
     private boolean isInTrackingMode;
-    private ImageView profil;
     private TextView textPopup, xkodim, xayani, xalun, xsmp2;
-    private Button kursi, list;
     private LocationEngine locationEngine;
     private static final long DEFAULT_INTERVAL_IN_MILLISECONDS = 1000L;
     private static final long DEFAULT_MAX_WAIT_TIME = DEFAULT_INTERVAL_IN_MILLISECONDS * 5;
@@ -94,43 +91,13 @@ public class MainMapAct extends AppCompatActivity implements
         // This contains the MapView in XML and needs to be called after the access token is configured.
         setContentView(R.layout.activity_main_map);
 
-        profil = findViewById(R.id.profil);
         mapView = findViewById(R.id.mapView);
         list = findViewById(R.id.list);
         kursi = findViewById(R.id.kursi);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
-        getUsernameLocal();
-
         listenerPengungguHalte();
-        reference = FirebaseDatabase.getInstance().getReference().child("users").child(username_key_new);
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                try {
-                    Picasso.with(MainMapAct.this)
-                            .load(dataSnapshot.child("url_photo_profile")
-                                    .getValue().toString()).centerCrop().fit().into(profil);
-                }catch (Exception e){
-
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        profil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goToProfile = new Intent(MainMapAct.this, Profile.class);
-                startActivity(goToProfile);
-            }
-        });
 
         list.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -377,11 +344,6 @@ public class MainMapAct extends AppCompatActivity implements
         mapView.onLowMemory();
     }
 
-    private void getUsernameLocal(){
-        SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-        username_key_new = sharedPreferences.getString(username_key, "");
-    }
-
     private void listenerPengungguHalte(){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("halte");
         reference.addValueEventListener(new ValueEventListener() {
@@ -466,9 +428,33 @@ public class MainMapAct extends AppCompatActivity implements
         if (kursi.getText().toString().equalsIgnoreCase("KURSI : KOSONG")){
             kursi.setText("KURSI : FULL");
             kursi.setBackgroundResource(R.drawable.kursi_full);
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("status");
+            reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    dataSnapshot.getRef().setValue("nonaktif");
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
         }else {
             kursi.setText("KURSI : KOSONG");
             kursi.setBackgroundResource(R.drawable.kursi_kosong);
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("status");
+            reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    dataSnapshot.getRef().setValue("aktif");
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
         }
     }
 }

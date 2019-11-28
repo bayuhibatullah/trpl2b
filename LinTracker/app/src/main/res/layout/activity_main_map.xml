@@ -48,10 +48,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="5dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/kursi"
@@ -60,13 +60,13 @@
 
         <Button
             android:id="@+id/off"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/circle_solid_red"
+            android:text="Berhenti narik"
+            android:textColor="#FFF"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:background="@drawable/kursi_full"
             android:drawableLeft="@drawable/ic_power"
-            android:paddingLeft="18dp"/>
+            android:paddingLeft="5dp"/>
 
         <Button
             android:id="@+id/list"
@@ -74,53 +74,17 @@
             android:layout_height="60dp"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:layout_marginBottom="16dp"
             android:background="@drawable/circle_solid_white"
             android:drawableLeft="@drawable/ic_menu"
             android:paddingLeft="18dp" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <View
-                android:id="@+id/profilBorder"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/circle_border_grey"
-                android:gravity="center"
-                android:orientation="vertical">
-            </View>
-
-            <com.github.florent37.shapeofview.shapes.CircleView
-                android:id="@+id/profil_shape"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:layout_constraintBottom_toBottomOf="@+id/profilBorder"
-                app:layout_constraintEnd_toEndOf="@+id/profilBorder"
-                app:layout_constraintStart_toStartOf="@+id/profilBorder"
-                app:layout_constraintTop_toTopOf="@+id/profilBorder">
-
-                <ImageView
-                    android:id="@+id/profil"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/icon_nopic" />
-
-            </com.github.florent37.shapeofview.shapes.CircleView>
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:id="@+id/tengah"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginBottom="16dp"
             android:background="@drawable/circle_solid_white"
             android:drawableLeft="@drawable/ic_gps"
-            android:paddingLeft="18dp"
-            android:layout_marginLeft="24dp"/>
+            android:paddingLeft="18dp"/>
 
     </LinearLayout>
 

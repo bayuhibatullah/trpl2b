@@ -75,7 +75,7 @@ public class LoginAct extends AppCompatActivity {
                                 editor.apply();
 
                                 //pindah activity
-                                Intent goToProfile = new Intent(LoginAct.this, MainMapAct.class);
+                                Intent goToProfile = new Intent(LoginAct.this, Profile.class);
                                 startActivity(goToProfile);
                                 finish();
                             }else {

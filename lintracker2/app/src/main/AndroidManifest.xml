@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainMap3Act"></activity>
+        <activity android:name=".SetDestinationAct"></activity>
+        <activity android:name=".MainMap3Act" />
         <activity android:name=".GetStartedAct" />
         <activity android:name=".MainMap2Act" />
         <activity android:name=".MainMapAct" />
