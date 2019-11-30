@@ -12,10 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SetDestinationAct"></activity>
-        <activity android:name=".MainMap3Act" />
+        <activity android:name=".PilihLinAct"/>
         <activity android:name=".GetStartedAct" />
         <activity android:name=".MainMap2Act" />
-        <activity android:name=".MainMapAct" />
         <activity android:name=".SplashAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

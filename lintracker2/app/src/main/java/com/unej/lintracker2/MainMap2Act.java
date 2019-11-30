@@ -135,15 +135,13 @@ public class MainMap2Act extends AppCompatActivity implements OnMapReadyCallback
                 enableLocationComponent(style);
                 driverGeoJsonUpdate();
                 mapboxMap.addOnMapClickListener(MainMap2Act.this);
-                Toast.makeText(MainMap2Act.this,
-                        getString(R.string.click_on_map_instruction), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void setUpDriverLayer(Style loadedStyle){
         loadedStyle.addImage(DRIVER_IMAGE_ID, BitmapFactory.decodeResource(
-                this.getResources(), R.drawable.car_yellow));
+                this.getResources(), R.drawable.ic_car_90));
 
         loadedStyle.addSource(new GeoJsonSource(DRIVER_SOURCE_ID));
 
@@ -152,7 +150,7 @@ public class MainMap2Act extends AppCompatActivity implements OnMapReadyCallback
                 iconAllowOverlap(true),
                 iconIgnorePlacement(true),
                 iconOffset(new Float[] {0f, -8f}),
-                iconSize(.2f),
+                iconSize(.3f),
                 visibility(NONE)
         ));
     }

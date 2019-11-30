@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LinTracker for Driver</string>
+    <string name="app_name">LinTracker For Driver</string>
     <string name="access_token">pk.eyJ1IjoiYmF5dWhpYmF0dWxsYWgiLCJhIjoiY2syMDBpNzlyMGs2NzNqcGN5eHluMDZhMSJ9.ILZXso7L-74DSf8YGkCYjg</string>
     <!-- Recyclerview on map -->
     <string name="rv_card_name">Halte #%1$d</string>

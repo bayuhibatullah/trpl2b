@@ -64,7 +64,7 @@
             android:textColor="#FFF"
             android:layout_width="160dp"
             android:layout_height="50dp"
-            android:background="@drawable/kursi_full"
+            android:background="@drawable/bttn_red"
             android:drawableLeft="@drawable/ic_power"
             android:paddingLeft="5dp"/>
 

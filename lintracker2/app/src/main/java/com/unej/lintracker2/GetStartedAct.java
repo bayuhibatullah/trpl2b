@@ -21,7 +21,7 @@ public class GetStartedAct extends AppCompatActivity {
         bttnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signIn = new Intent(GetStartedAct.this, MainMap2Act.class);
+                Intent signIn = new Intent(GetStartedAct.this, PilihLinAct.class);
                 startActivity(signIn);
                 finish();
             }

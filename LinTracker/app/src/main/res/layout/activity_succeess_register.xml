@@ -7,60 +7,53 @@
     android:background="@color/bg_putih_default"
     tools:context=".SucceessRegister">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="277dp"
-        android:layout_height="320dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="42dp"
-        android:src="@drawable/icon_success_signup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:fontFamily="@font/mregular"
-        android:text="Akun Berhasil Dibuat!"
-        android:textColor="@color/blackPrimary"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="277dp"
+            android:layout_height="320dp"
+            android:src="@drawable/icon_success_signup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/mlight"
-        android:text="Selamat datang di Lin Tracker\ndan asikin naik linmu"
-        android:textAlignment="center"
-        android:textColor="@color/greyPrimary"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:fontFamily="@font/mregular"
+            android:text="Akun Berhasil Dibuat!"
+            android:textColor="@color/blackPrimary"
+            android:textSize="22sp"/>
 
-    <Button
-        android:id="@+id/bttnMulai"
-        android:layout_width="274dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/bttn_primary"
-        android:fontFamily="@font/mmedium"
-        android:text="MULAI SEKARANG"
-        android:textColor="#FFF"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/mlight"
+            android:text="Selamat datang di Lin Tracker\ndan asikin naik linmu"
+            android:textAlignment="center"
+            android:textColor="@color/greyPrimary"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/bttnMulai"
+            android:layout_width="274dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/bttn_primary"
+            android:fontFamily="@font/mmedium"
+            android:text="MULAI SEKARANG"
+            android:textColor="#FFF"
+            android:textSize="18dp"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

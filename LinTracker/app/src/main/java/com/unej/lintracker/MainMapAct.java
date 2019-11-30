@@ -60,7 +60,7 @@ public class MainMapAct extends AppCompatActivity implements
     private PermissionsManager permissionsManager;
     private MapboxMap mapboxMap;
     private MapView mapView;
-    private Button tengah, kursi, list;
+    private Button tengah, kursi, list, off;
     private LocationComponent locationComponent;
     private boolean isInTrackingMode;
     private TextView textPopup, xkodim, xayani, xalun, xsmp2;
@@ -96,6 +96,7 @@ public class MainMapAct extends AppCompatActivity implements
         kursi = findViewById(R.id.kursi);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+        off = findViewById(R.id.off);
 
         listenerPengungguHalte();
 
@@ -110,6 +111,13 @@ public class MainMapAct extends AppCompatActivity implements
             @Override
             public void onClick(View v) {
                 kursi();
+            }
+        });
+
+        off.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                off();
             }
         });
     }
@@ -456,5 +464,23 @@ public class MainMapAct extends AppCompatActivity implements
                 }
             });
         }
+    }
+
+    private void off(){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("status");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                dataSnapshot.getRef().setValue("nonaktif");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        Intent goToProfile = new Intent(MainMapAct.this, Profile.class);
+        startActivity(goToProfile);
+        finish();
     }
 }

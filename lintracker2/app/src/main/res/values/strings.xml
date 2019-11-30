@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LinTracker2</string>
+    <string name="app_name">LinTracker For Pessanger</string>
     <string name="access_token">pk.eyJ1IjoiYmF5dWhpYmF0dWxsYWgiLCJhIjoiY2syMDBpNzlyMGs2NzNqcGN5eHluMDZhMSJ9.ILZXso7L-74DSf8YGkCYjg</string>
 
     <!-- Recyclerview on map -->
@@ -10,7 +10,7 @@
     <!--QueryFeatureActivity activity-->
     <string name="query_feature_marker_title">Properties:</string>
     <string name="click_on_map_instruction">click_on_map_instruction</string>
-    <string name="query_feature_no_properties_found">query_feature_no_properties_found</string>
+    <string name="query_feature_no_properties_found">Itu bukan halte</string>
 
     <!--Lokasi Device-->
     <string name="user_location_permission_explanation">Anda harus mengaktifkan lokasi untuk melihat lokasi anda</string>

@@ -21,7 +21,7 @@ public class SucceessRegister extends AppCompatActivity {
         bttnMulai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToHome = new Intent(SucceessRegister.this, MainMapAct.class);
+                Intent goToHome = new Intent(SucceessRegister.this, Profile.class);
                 startActivity(goToHome);
                 finish();
             }
